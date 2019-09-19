@@ -12,8 +12,11 @@ export default function App() {
     setCourseGoals(currentGoals => [...currentGoals, { id: Math.random().toString(), value: goal }])
   }
 
-  const OnDelete = () => {
-    console.log('delete')
+  const OnDelete = goalId => {
+    setCourseGoals(currentGoals => {
+      return currentGoals.filter((goal) => goal.id !== goalId)
+    })
+    console.log('delete: ', goalId)
   }
 
   return (
@@ -24,9 +27,8 @@ export default function App() {
       <FlatList
         keyExtractor={(item, index) => item.id}
         data={courseGoals} renderItem={itemData => (
-          <GoalItem title={itemData.item.value} OnDelete={OnDelete} />
+          <GoalItem id={itemData.item.id} title={itemData.item.value} OnDelete={OnDelete} />
         )} />
-
     </View>
   );
 }
