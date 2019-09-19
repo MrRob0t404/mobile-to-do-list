@@ -10,7 +10,7 @@ const GoalInput = props => {
 
     return (
         <View style={styles.textInputContainer}>
-            <TextInput placeholder="Course Goal" style={styles.textInput} onChangeText={goalInputHandler} value={enteredGoal} width='80%'> </TextInput>
+            <TextInput placejolder="Course Goal" style={styles.textInput} onChangeText={goalInputHandler} value={enteredGoal} width='80%' /> 
             <Button title='Add' onPress={() => props.addGoalHandler(enteredGoal)}></Button>
         </View>
     )

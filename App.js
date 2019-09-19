@@ -20,7 +20,7 @@ export default function App() {
   }
 
   return (
-    <View style={{ padding: 50 }}>
+    <View style={styles.view}>
 
       <GoalInput addGoalHandler={addGoalHandler} />
 
@@ -33,4 +33,10 @@ export default function App() {
   );
 }
 
+const styles = StyleSheet.create({
+  view:
+  {
+    padding: 50
+  }
+})
 
