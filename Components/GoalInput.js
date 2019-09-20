@@ -22,8 +22,14 @@ const GoalInput = props => {
         <Modal visible={props.visible} animationType="slide">
             <View style={styles.textInputContainer}>
                 <TextInput placejolder="Course Goal" style={styles.textInput} onChangeText={goalInputHandler} value={enteredGoal} />
-                <Button title='Add' onPress={addGoalHandler}></Button>
-                <Button title='Cancel' color="red" onPress={onCancelHandler}></Button>
+                <View style={styles.buttonContainer}>
+                    <View style={styles.button}>
+                        <Button title='Add' onPress={addGoalHandler}></Button>
+                    </View>
+                    <View style={styles.button}>
+                        <Button title='Cancel' color="red" onPress={onCancelHandler}></Button>
+                    </View>
+                </View>
             </View>
         </Modal>
     )
@@ -41,6 +47,14 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         marginBottom: 10
+    },
+    buttonContainer: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        width: "60%"
+    },
+    button: {
+        width: "40%"
     }
 })
 
