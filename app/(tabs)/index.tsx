@@ -16,7 +16,7 @@ export default function HomeScreen() {
 
   const handleAddTask = () => {
     if (task === "") return;
-    console.log("DEBUG", "TASK:", task, "TASKITEMs:", taskItems);
+
     setTaskItems([...taskItems, task]);
     setTask("");
   };
